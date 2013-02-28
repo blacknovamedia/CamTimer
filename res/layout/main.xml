@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
    	android:layout_width="fill_parent"
-   	android:layout_height="fill_parent">
+   	android:layout_height="fill_parent"
+   	android:background="@drawable/bg2">
 
 	<SurfaceView android:id="@+id/cameraView" 
 		android:layout_width="fill_parent"
@@ -9,70 +10,87 @@
 
 	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
 		android:orientation="vertical">
-		
-		<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1">
-			
-			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:id="@+id/statusText"
-				android:gravity="top|center"
-				/>
-				
-			<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:gravity="top|left">
-				
-				<com.dozingcatsoftware.util.ShutterButton
-                    android:id="@+id/shutterButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00000000"
-                    android:clickable="true"
-                    android:src="@drawable/btn_camera_shutter_holo" />
-				
-            </LinearLayout>
-			
-		</FrameLayout>
 
-		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
 			android:orientation="horizontal"
 			android:layout_weight="1"
-			android:gravity="bottom|center">
+			android:gravity="center"
+   			android:background="@drawable/menu_bg">
 				
-			<LinearLayout android:id="@+id/miscButtonBar"
-			    android:layout_width="wrap_content" android:layout_height="fill_parent"
-			    android:gravity="left|bottom" android:orientation="horizontal" android:layout_weight="1">
+			<LinearLayout
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="0.03"
+			    android:gravity="center|fill_vertical|left"
+			    android:orientation="vertical" 
+			    >
 
-				<Button android:id="@+id/helpButton" android:text="@string/helpButtonLabel"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" />				
+				<com.blacknovamedia.cameratimer.util.ShutterButton
+				    android:id="@+id/shutterButton"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:background="#00000000"
+				    android:clickable="true"
+				    android:layout_marginLeft="10dp"
+				    android:src="@drawable/btn_camera_shutter_holo" />
+		
+				<Button android:id="@+id/cancelPictureButton" android:visibility="gone"
+					android:layout_marginLeft="10dp"
+				    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
 				
+			
+				<Button android:id="@+id/flashButton"  android:visibility="gone"
+					android:layout_marginLeft="10dp"
+				    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+				<Button
+				    android:id="@+id/switchCameraButton"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_gravity="center_vertical"
+				    android:layout_marginLeft="10dp"
+				    android:src="@drawable/btn_switchcam" />
+
+				<Button android:id="@+id/helpButton"
+					android:layout_marginLeft="10dp"
+				    android:layout_width="wrap_content" android:layout_height="wrap_content" />				
+
+		        <ImageView
+            		android:id="@+id/bnmLogosquare"
+		            android:layout_width="42dp"
+		            android:layout_height="42dp"
+		            android:layout_marginBottom="10dip"
+		            android:layout_marginLeft="7dip"
+		            android:layout_marginRight="10dip"
+		            android:layout_marginTop="10dip"
+		            android:adjustViewBounds="true"
+		            android:src="@drawable/bnm_logo_square" />
+				
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" 
+				android:id="@+id/statusText"
+				android:gravity="top|center"
+				android:textSize="60dp"
+    			android:fontFamily="Arial"
+            	android:textColor="@color/gray"
+				/>			
+					        
 				<Button android:id="@+id/libraryButton" android:text="@string/libraryButtonLabel"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" />				
-				
-			</LinearLayout>
-
-			<LinearLayout android:id="@+id/optionsButtonBar"
-			    android:layout_width="wrap_content" android:layout_height="fill_parent"
-			    android:gravity="right|bottom" android:orientation="horizontal" android:layout_weight="1">
-				    
+					android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />				
+												
 				<Button android:id="@+id/pictureDelayButton" android:text="@string/defaultDelayButtonLabel"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" />
+					android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
 					
 			    <Button android:id="@+id/numberOfPicturesButton" android:text="@string/singleImageButtonLabel"
-			    	android:layout_width="wrap_content" android:layout_height="wrap_content" />
-				    
-				<Button android:id="@+id/flashButton" android:text="@string/flashButtonDefaultLabel" android:visibility="gone"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" />
-
-				<Button android:id="@+id/switchCameraButton" android:text="@string/switchCameraButtonLabel" android:visibility="gone"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" />
-						
+			    	android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+							
 			</LinearLayout>
-
-			<Button android:id="@+id/cancelPictureButton" android:text="@string/cancelPictureButtonLabel" android:visibility="gone"
-				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
 		</LinearLayout>
 		
+
+			
 	</LinearLayout>
 				                  	
 </FrameLayout>

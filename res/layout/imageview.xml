@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
   
@@ -9,20 +10,55 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" />
     
-	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:orientation="horizontal"
-		android:gravity="bottom|center">
-		
-		<Button android:id="@+id/deleteImageButton" android:text="@string/deleteImageButtonLabel"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	<LinearLayout
+	    android:layout_width="134dp"
+	    android:layout_height="match_parent"
+	    android:gravity="bottom|center"
+	    android:orientation="vertical" >
 
-		<Button android:id="@+id/shareImageButton" android:text="@string/shareImageButtonLabel" 
-			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	    <Button
+	        android:id="@+id/deleteImageButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="50dp"
+	        android:background="@drawable/btn_blue"
+	        android:text="@string/deleteImageButtonLabel"
+	        android:textColor="@color/white" />
 
-		<Button android:id="@+id/exitViewImageButton" android:text="@string/exitViewImageButtonLabel"
-			android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	    <Button
+	        android:id="@+id/shareImageButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="50dp"
+	        android:background="@drawable/btn_blue"
+	        android:text="@string/shareImageButtonLabel"
+	        android:textColor="@color/white" />
 
+	    <Button
+	        android:id="@+id/exitViewImageButton"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="50dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="50dp"
+	        android:background="@drawable/btn_blue"
+	        android:text="@string/exitViewImageButtonLabel"
+	        android:textColor="@color/white" />
 	</LinearLayout>
-  
-  
+
+<!-- 
+		<com.google.ads.AdView
+		    android:id="@+id/adView"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="bottom"
+		    ads:adSize="BANNER"
+		    ads:adUnitId="MY_AD_UNIT_ID"
+		    ads:loadAdOnCreate="true"
+		    ads:testDevices="TEST_EMULATOR, TEST_DEVICE_ID"
+		    android:ems="10"
+		    android:gravity="center" />
+ -->
 </FrameLayout>
